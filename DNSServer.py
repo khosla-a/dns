@@ -75,46 +75,33 @@ dns_records = {
         ),
     },
 
-    'safebank.com': {
+    'safebank.com.': {
         dns.rdatatype.A: '192.168.1.102',
-        dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
-        dns.rdatatype.MX: [(10, 'mail.example.com.')],  # List of (preference, mail server) tuples
-        dns.rdatatype.CNAME: 'www.safebank.com',
-        dns.rdatatype.NS: 'ns.example.com.',
-        dns.rdatatype.TXT: ('This is a TXT record',),
-        dns.rdatatype.SOA: (
-            'ns1.example.com.', #mname
-            'admin.example.com.', #rname
-            2023081401, #serial
-            3600, #refresh
-            1800, #retry
-            604800, #expire
-            86400, #minimum
-        ),
+        dns.rdatatype.CNAME: 'www.safebank.com.',
     },
 
-    'google.com': {
+    'google.com.': {
         dns.rdatatype.A: '192.168.1.103',
-        dns.rdatatype.CNAME: 'www.google.com',
+        dns.rdatatype.CNAME: 'www.google.com.',
     },
 
-    'legitsite.com': {
+    'legitsite.com.': {
         dns.rdatatype.A: '192.168.1.104',
-        dns.rdatatype.CNAME: 'www.legitsite.com',
+        dns.rdatatype.CNAME: 'www.legitsite.com.',
     },
 
-    'yahoo.com': {
+    'yahoo.com.': {
         dns.rdatatype.A: '192.168.1.105',
-        dns.rdatatype.CNAME: 'www.yahoo.com',
+        dns.rdatatype.CNAME: 'www.yahoo.com.',
     },
 
-    'nyu.edu': {
+    'nyu.edu.': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
-        dns.rdatatype.CNAME: 'www.nyu.edu',
-        dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com')],
-        dns.rdatatype.NS: 'ns1.nyu.edu', 
-        dns.rdatatype.TXT: ('hello'),
+        dns.rdatatype.CNAME: 'www.nyu.edu.',
+        dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')],
+        dns.rdatatype.NS: 'ns1.nyu.edu.', 
+        dns.rdatatype.TXT: (str(encrypted_value)),
     },
 
    
