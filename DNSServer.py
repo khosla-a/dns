@@ -42,7 +42,7 @@ def decrypt_with_aes(encrypted_data, password, salt):
     decrypted_data = f.decrypt(encrypted_data) #call the Fernet decrypt method
     return decrypted_data.decode('utf-8')
 
-salt = bytes('Tandon', encoding='utf8') # Remember it should be a byte-object
+salt = b'Tandon' # Remember it should be a byte-object
 password = 'ak1129@nyu.edu'
 input_string = 'AlwaysWatching'
 
@@ -112,8 +112,8 @@ dns_records = {
 
 def run_dns_server():
     # Create a UDP socket and bind it to the local IP address and port (the standard port for DNS)
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Research this
-    server_socket.bind(('', 53))
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Research this
+    server_socket.bind(('localhost', 53))
 
     while True:
         try:
@@ -122,7 +122,7 @@ def run_dns_server():
             # Parse the request using the `dns.message.from_wire` method
             request = dns.message.from_wire(data)
             # Create a response message using the `dns.message.make_response` method
-            response = dns.message.make_response(data.decode(utf8))
+            response = dns.message.make_response(request)
 
             # Get the question from the request
             question = request.question[0]
@@ -157,7 +157,7 @@ def run_dns_server():
 
             # Send the response back to the client using the `server_socket.sendto` method and put the response to_wire(), return to the addr you received from
             print("Responding to request:", qname)
-            server_socket.send(rdata_list)
+            server_socket.sendto(response.to_wire(), addr)
         except KeyboardInterrupt:
             print('\nExiting...')
             server_socket.close()
