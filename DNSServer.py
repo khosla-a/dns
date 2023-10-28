@@ -77,13 +77,13 @@ dns_records = {
 
     'safebank.com': {
         dns.rdatatype.A: '192.168.1.102',
-        dns.rdatatype.CNAME: 'www.safebank.com'
+        dns.rdatatype.CNAME: 'www.safebank.com',
 
     },
 
     'google.com': {
         dns.rdatatype.A: '192.168.1.103',
-        dns.rdatatype.CNAME: 'www.google.com'
+        dns.rdatatype.CNAME: 'www.google.com',
     },
 
     'legitsite.com': {
@@ -103,7 +103,7 @@ dns_records = {
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com')],
         dns.rdatatype.NS: 'ns1.nyu.edu', 
         dns.rdatatype.TXT: (str(encrypted_value)),
-    }
+    },
 
    
     # Add more records as needed (see assignment instructions!
