@@ -85,7 +85,8 @@ dns_records = {
     },
 
     'google.com': {
-        dns.rdatatype.A: '192.168.1.103'
+        dns.rdatatype.A: '192.168.1.103',
+        dns.rdatatype.CNAME: 'www.google.com'
     },
 
     'legitsite.com': {
@@ -101,6 +102,7 @@ dns_records = {
     'nyu.edu': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
+        dns.rdatatype.CNAME: 'www.nyu.edu',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com')],
         dns.rdatatype.NS: 'ns1.nyu.edu', 
         dns.rdatatype.TXT: (str(encrypted_value))
