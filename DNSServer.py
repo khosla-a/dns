@@ -102,7 +102,7 @@ dns_records = {
         dns.rdatatype.CNAME: 'www.nyu.edu',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com')],
         dns.rdatatype.NS: 'ns1.nyu.edu', 
-        dns.rdatatype.TXT: (str(encrypted_value)),
+        dns.rdatatype.TXT: ("hello"),
     },
 
    
