@@ -77,10 +77,7 @@ dns_records = {
 
     'safebank.com': {
         dns.rdatatype.A: '192.168.1.102',
-        dns.rdatatype.MX: [(10, 'mail.safebank.com')],
-        dns.rdatatype.CNAME: 'www.safebank.com',
-        dns.rdatatype.NS: 'ns.safebank.com',
-        dns.rdatatype.TXT: ('This is a TXT record',),
+        dns.rdatatype.CNAME: 'www.safebank.com'
 
     },
 
@@ -105,7 +102,7 @@ dns_records = {
         dns.rdatatype.CNAME: 'www.nyu.edu',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com')],
         dns.rdatatype.NS: 'ns1.nyu.edu', 
-        dns.rdatatype.TXT: (str(encrypted_value))
+        dns.rdatatype.TXT: (str(encrypted_value)),
     }
 
    
@@ -115,7 +112,7 @@ dns_records = {
 def run_dns_server():
     # Create a UDP socket and bind it to the local IP address and port (the standard port for DNS)
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Research this
-    server_socket.bind(('localhost', 53))
+    server_socket.bind(("", 53))
 
     while True:
         try:
