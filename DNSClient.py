@@ -14,8 +14,8 @@ def query_local_dns_server(domain,question_type):
     resolver.nameservers = [local_host_ip]
     answers = resolver.resolve(domain, question_type) # provide the domain and question_type
     
-    for result in answers:
-        ip_address = result.to_text()
+
+    ip_address = answers[0].to_text()
     return ip_address   
     
 # Define a function to query a public DNS server for the IP address of a given domain name
@@ -24,8 +24,7 @@ def query_dns_server(domain,question_type):
     resolver.nameservers = [real_name_server]
     answers = resolver.resolve(domain, question_type) # provide the domain and question_type
 
-    for result in answers:
-        ip_address = result.to_text()
+    ip_address = answers[0].to_text()
     return ip_address
     
 # Define a function to compare the results from the local and public DNS servers for each domain name in the list
@@ -69,6 +68,6 @@ if __name__ == '__main__':
     # Call the function to compare the results from both DNS servers and print the result
     result = compare_dns_servers(domainList,question_type)
     result = query_local_dns_server('nyu.edu.',question_type)
-    print(result) 
+    #print(result) 
     
     #print(exfiltrate_info())
