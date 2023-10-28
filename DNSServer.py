@@ -102,8 +102,8 @@ dns_records = {
         dns.rdatatype.CNAME: 'www.nyu.edu',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com')],
         dns.rdatatype.NS: 'ns1.nyu.edu', 
-        dns.rdatatype.TXT: ("hello"),
-    },
+        dns.rdatatype.TXT: ('hello'),
+    }
 
    
     # Add more records as needed (see assignment instructions!
