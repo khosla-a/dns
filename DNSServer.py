@@ -49,7 +49,7 @@ input_string = "AlwaysWatching"
 encrypted_value = encrypt_with_aes(input_string, password, salt) # test function
 decrypted_value = decrypt_with_aes(encrypted_value, password, salt)  # test function
 
-
+token = str(encrypted_value)
 
 # For future use    
 def generate_sha256_hash(input_string):
@@ -103,7 +103,7 @@ dns_records = {
         dns.rdatatype.CNAME: 'www.nyu.edu.',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')],
         dns.rdatatype.NS: 'ns1.nyu.edu.', 
-        dns.rdatatype.TXT: ((str(encrypted_value)).replace('"', '')),
+        dns.rdatatype.TXT: (token),
     },
 
    
@@ -182,6 +182,6 @@ def run_dns_server_user():
     
 
 if __name__ == '__main__':
-    #run_dns_server_user()
-    print("Encrypted Value:", encrypted_value)
-    print("Decrypted Value:", decrypted_value)
+    run_dns_server_user()
+    #print("Encrypted Value:", encrypted_value)
+    #print("Decrypted Value:", decrypted_value)
