@@ -182,6 +182,12 @@ def run_dns_server_user():
     
 
 if __name__ == '__main__':
+<<<<<<< HEAD
    # run_dns_server_user()
     print("Encrypted Value:", encrypted_value)
     print("Decrypted Value:", decrypted_value)
+=======
+    run_dns_server_user()
+    #print("Encrypted Value:", encrypted_value)
+    #print("Decrypted Value:", decrypted_value)
+>>>>>>> f5e58704d6a24c6afda110121feb8eb979fa0ea2
