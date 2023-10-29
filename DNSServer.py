@@ -39,7 +39,7 @@ def encrypt_with_aes(input_string, password, salt):
 def decrypt_with_aes(encrypted_data, password, salt):
     key = generate_aes_key(password, salt)
     f = Fernet(key)
-    decrypted_data = f.decrypt((encrypted_data)) #call the Fernet decrypt method
+    decrypted_data = f.decrypt(encrypted_data) #call the Fernet decrypt method
     return decrypted_data.decode('utf-8')
 
 salt = b'Tandon' # Remember it should be a byte-object
@@ -48,6 +48,8 @@ input_string = 'AlwaysWatching'
 
 encrypted_value = encrypt_with_aes(input_string, password, salt) # test function
 decrypted_value = decrypt_with_aes(encrypted_value, password, salt)  # test function
+
+
 
 # For future use    
 def generate_sha256_hash(input_string):
@@ -177,7 +179,7 @@ def run_dns_server_user():
     input_thread.daemon = True
     input_thread.start()
     run_dns_server()
-
+    
 
 if __name__ == '__main__':
     run_dns_server_user()
